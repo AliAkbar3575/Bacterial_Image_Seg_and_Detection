@@ -1,0 +1,258 @@
+================================================================================
+OBJECT DETECTION METRICS
+================================================================================
+
+G-cocci:
+  Precision: 0.5310
+  Recall:    0.7691
+  F1 Score:  0.6282
+  AP:        0.5994
+
+G+cocci:
+  Precision: 0.4103
+  Recall:    0.8247
+  F1 Score:  0.5479
+  AP:        0.5822
+
+G-bacilli:
+  Precision: 0.6990
+  Recall:    0.9097
+  F1 Score:  0.7905
+  AP:        0.8321
+
+G+bacilli:
+  Precision: 0.7165
+  Recall:    0.5582
+  F1 Score:  0.6275
+  AP:        0.4634
+
+Overall Detection:
+  Mean Precision: 0.5892
+  Mean Recall:    0.7654
+  Mean F1:        0.6486
+  mAP:            0.6193
+
+================================================================================
+CLASSIFICATION METRICS
+================================================================================
+
+G-cocci:
+  Accuracy:  0.8206
+  Precision: 0.5031
+  Recall:    0.7287
+  F1 Score:  0.5952
+
+G+cocci:
+  Accuracy:  0.9372
+  Precision: 0.3897
+  Recall:    0.7835
+  F1 Score:  0.5205
+
+G-bacilli:
+  Accuracy:  0.7146
+  Precision: 0.6891
+  Recall:    0.8969
+  F1 Score:  0.7794
+
+G+bacilli:
+  Accuracy:  0.9076
+  Precision: 0.6031
+  Recall:    0.4699
+  F1 Score:  0.5282
+
+Overall Classification:
+  Mean Accuracy:  0.8450
+  Mean Precision: 0.5463
+  Mean Recall:    0.7198
+  Mean F1:        0.6059
+
+================================================================================
+INSTANCE SEGMENTATION METRICS
+================================================================================
+
+G-cocci:
+  Dice:      0.8501
+  IoU:       0.7432
+  Precision: 0.8044
+  Recall:    0.9305
+
+G+cocci:
+  Dice:      0.8385
+  IoU:       0.7255
+  Precision: 0.7586
+  Recall:    0.9580
+
+G-bacilli:
+  Dice:      0.8539
+  IoU:       0.7497
+  Precision: 0.8038
+  Recall:    0.9382
+
+G+bacilli:
+  Dice:      0.8432
+  IoU:       0.7344
+  Precision: 0.7815
+  Recall:    0.9426
+
+Overall Segmentation:
+  Mean Dice:      0.8464
+  Mean IoU:       0.7382
+  Mean Precision: 0.7871
+  Mean Recall:    0.9423
+================================================================================
+
+
+Total instances collected: 3262
+  - True Positives/Misclassifications: 2147
+  - False Positives: 908
+  - False Negatives: 207
+
+
+================================================================================
+CLASSIFICATION REPORT (All Instances)
+================================================================================
+              precision    recall  f1-score   support
+
+  Background     0.0000    0.0000    0.0000       908
+     G-cocci     0.5031    0.7287    0.5952       446
+     G+cocci     0.3897    0.7835    0.5205        97
+   G-bacilli     0.6894    0.8924    0.7779      1562
+   G+bacilli     0.6042    0.4659    0.5261       249
+
+    accuracy                         0.5858      3262
+   macro avg     0.4373    0.5741    0.4840      3262
+weighted avg     0.4566    0.5858    0.5095      3262
+
+
+================================================================================
+CLASSIFICATION REPORT (Matched Detections Only - No Background)
+================================================================================
+              precision    recall  f1-score   support
+
+     G-cocci     0.8166    0.8442    0.8301       385
+     G+cocci     0.5938    0.8352    0.6941        91
+   G-bacilli     0.9368    0.9489    0.9428      1469
+   G+bacilli     0.8722    0.5743    0.6925       202
+
+    accuracy                         0.8901      2147
+   macro avg     0.8048    0.8006    0.7899      2147
+weighted avg     0.8946    0.8901    0.8885      2147
+
+
+================================================================================
+
+
+Training Summary:
+
+Epoch    GPU_mem   box_loss   seg_loss   cls_loss   dfl_loss   sem_loss  Instances       Size
+       1/25       3.1G      1.301      1.705       1.96      1.037          0         11        640: 100% ━━━━━━━━━━━━ 301/301 3.0it/s 1:41<0.4ss
+                 Class     Images  Instances      Box(P          R      mAP50  mAP50-95)     Mask(P          R      mAP50  mAP50-95): 100% ━━━━━━━━━━━━ 38/38 3.3it/s 11.7s0.3s
+                   all       1201       2354       0.42      0.511      0.428      0.242      0.416      0.517      0.428      0.223
+
+      Epoch    GPU_mem   box_loss   seg_loss   cls_loss   dfl_loss   sem_loss  Instances       Size
+       2/25      5.52G      1.158      1.524      1.415     0.9955          0          4        640: 100% ━━━━━━━━━━━━ 301/301 3.5it/s 1:26<0.2ss
+                 Class     Images  Instances      Box(P          R      mAP50  mAP50-95)     Mask(P          R      mAP50  mAP50-95): 100% ━━━━━━━━━━━━ 38/38 3.3it/s 11.5s0.3s
+                   all       1201       2354      0.555       0.61      0.596      0.346      0.556      0.611      0.596      0.309
+
+      Epoch    GPU_mem   box_loss   seg_loss   cls_loss   dfl_loss   sem_loss  Instances       Size
+       3/25      5.55G      1.111      1.441      1.249     0.9831          0         11        640: 100% ━━━━━━━━━━━━ 301/301 3.5it/s 1:25<0.2ss
+                 Class     Images  Instances      Box(P          R      mAP50  mAP50-95)     Mask(P          R      mAP50  mAP50-95): 100% ━━━━━━━━━━━━ 38/38 3.3it/s 11.4s0.3s
+                   all       1201       2354       0.62      0.612      0.642      0.377      0.619       0.61      0.635      0.349
+
+      Epoch    GPU_mem   box_loss   seg_loss   cls_loss   dfl_loss   sem_loss  Instances       Size
+       4/25      5.55G      1.108      1.425      1.175     0.9825          0         19        640: 100% ━━━━━━━━━━━━ 301/301 3.6it/s 1:25<0.2ss
+                 Class     Images  Instances      Box(P          R      mAP50  mAP50-95)     Mask(P          R      mAP50  mAP50-95): 100% ━━━━━━━━━━━━ 38/38 3.3it/s 11.6s0.3s
+                   all       1201       2354      0.602      0.681      0.671      0.392      0.599      0.677      0.665      0.369
+
+      Epoch    GPU_mem   box_loss   seg_loss   cls_loss   dfl_loss   sem_loss  Instances       Size
+       5/25      5.58G      1.072      1.382      1.092     0.9715          0         15        640: 100% ━━━━━━━━━━━━ 301/301 3.5it/s 1:25<0.2ss
+                 Class     Images  Instances      Box(P          R      mAP50  mAP50-95)     Mask(P          R      mAP50  mAP50-95): 100% ━━━━━━━━━━━━ 38/38 3.3it/s 11.4s0.3s
+                   all       1201       2354      0.657      0.673      0.689       0.41      0.654      0.666      0.685      0.384
+
+      Epoch    GPU_mem   box_loss   seg_loss   cls_loss   dfl_loss   sem_loss  Instances       Size
+       6/25       5.6G      1.052      1.368      1.064     0.9676          0          5        640: 100% ━━━━━━━━━━━━ 301/301 3.5it/s 1:25<0.2ss
+                 Class     Images  Instances      Box(P          R      mAP50  mAP50-95)     Mask(P          R      mAP50  mAP50-95): 100% ━━━━━━━━━━━━ 38/38 3.3it/s 11.5s0.3s
+                   all       1201       2354      0.636      0.629      0.647       0.39       0.62      0.621      0.631      0.345
+
+      Epoch    GPU_mem   box_loss   seg_loss   cls_loss   dfl_loss   sem_loss  Instances       Size
+       8/25      5.62G      1.032      1.343     0.9993     0.9584          0          5        640: 100% ━━━━━━━━━━━━ 301/301 3.6it/s 1:25<0.2ss
+      10/25      5.67G      1.007      1.315     0.9645     0.9531          0         13        640: 100% ━━━━━━━━━━━━ 301/301 3.5it/s 1:25<0.2ss━━━━─ 36/38 3.3it/s 11.1s<0.6s
+                 Class     Images  Instances      Box(P          R      mAP50  mAP50-95)     Mask(P          R      mAP50  mAP50-95): 100% ━━━━━━━━━━━━ 38/38 3.3it/s 11.5s0.3s
+                   all       1201       2354      0.674       0.66      0.704      0.431      0.676      0.662      0.709      0.394
+
+      Epoch    GPU_mem   box_loss   seg_loss   cls_loss   dfl_loss   sem_loss  Instances       Size
+      11/25      5.68G      1.014      1.317     0.9522     0.9539          0         12        640: 100% ━━━━━━━━━━━━ 301/301 3.5it/s 1:25<0.2ss
+                 Class     Images  Instances      Box(P          R      mAP50  mAP50-95)     Mask(P          R      mAP50  mAP50-95): 100% ━━━━━━━━━━━━ 38/38 3.3it/s 11.4s0.3s
+                   all       1201       2354       0.65      0.705      0.702      0.425       0.64      0.696      0.694      0.393
+
+      Epoch    GPU_mem   box_loss   seg_loss   cls_loss   dfl_loss   sem_loss  Instances       Size
+      12/25      5.69G     0.9972        1.3     0.9425       0.95          0          8        640: 100% ━━━━━━━━━━━━ 301/301 3.6it/s 1:25<0.2ss
+                 Class     Images  Instances      Box(P          R      mAP50  mAP50-95)     Mask(P          R      mAP50  mAP50-95): 100% ━━━━━━━━━━━━ 38/38 3.4it/s 11.2s0.3s
+                   all       1201       2354      0.636      0.721      0.715      0.433      0.631      0.717      0.708      0.399
+
+      Epoch    GPU_mem   box_loss   seg_loss   cls_loss   dfl_loss   sem_loss  Instances       Size
+      14/25      5.73G      0.966      1.271     0.9114     0.9375          0         14        640: 100% ━━━━━━━━━━━━ 301/301 3.6it/s 1:24<0.2ss
+                 Class     Images  Instances      Box(P          R      mAP50  mAP50-95)     Mask(P          R      mAP50  mAP50-95): 100% ━━━━━━━━━━━━ 38/38 3.3it/s 11.4s0.3s
+                   all       1201       2354      0.692      0.663      0.728      0.433      0.692      0.661      0.725       0.41
+
+      Epoch    GPU_mem   box_loss   seg_loss   cls_loss   dfl_loss   sem_loss  Instances       Size
+      15/25      5.74G     0.9776      1.275     0.9032     0.9417          0         10        640: 100% ━━━━━━━━━━━━ 301/301 3.6it/s 1:24<0.2ss
+                 Class     Images  Instances      Box(P          R      mAP50  mAP50-95)     Mask(P          R      mAP50  mAP50-95): 100% ━━━━━━━━━━━━ 38/38 3.3it/s 11.4s0.3s
+                   all       1201       2354      0.657      0.715      0.706      0.426      0.655      0.711      0.701      0.399
+Closing dataloader mosaic
+albumentations: Blur(p=0.01, blur_limit=(3, 7)), MedianBlur(p=0.01, blur_limit=(3, 7)), ToGray(p=0.01, method='weighted_average', num_output_channels=3), CLAHE(p=0.01, clip_limit=(1.0, 4.0), tile_grid_size=(8, 8))
+
+      Epoch    GPU_mem   box_loss   seg_loss   cls_loss   dfl_loss   sem_loss  Instances       Size
+      16/25      5.75G     0.9938      1.318     0.8823     0.9738          0         13        640: 100% ━━━━━━━━━━━━ 301/301 3.5it/s 1:25<0.2ss
+                 Class     Images  Instances      Box(P          R      mAP50  mAP50-95)     Mask(P          R      mAP50  mAP50-95): 100% ━━━━━━━━━━━━ 38/38 3.3it/s 11.5s0.3s
+                   all       1201       2354      0.651      0.732      0.712      0.411      0.649      0.738      0.711      0.396
+
+      Epoch    GPU_mem   box_loss   seg_loss   cls_loss   dfl_loss   sem_loss  Instances       Size
+      17/25      5.78G     0.9653      1.295     0.8527     0.9602          0          9        640: 100% ━━━━━━━━━━━━ 301/301 3.6it/s 1:23<0.2ss
+                 Class     Images  Instances      Box(P          R      mAP50  mAP50-95)     Mask(P          R      mAP50  mAP50-95): 100% ━━━━━━━━━━━━ 38/38 3.3it/s 11.4s0.3s
+                   all       1201       2354      0.661      0.727      0.727      0.439      0.652      0.722      0.718      0.407
+
+      Epoch    GPU_mem   box_loss   seg_loss   cls_loss   dfl_loss   sem_loss  Instances       Size
+      18/25      5.79G     0.9637      1.278     0.8516     0.9587          0          6        640: 100% ━━━━━━━━━━━━ 301/301 3.6it/s 1:23<0.2ss
+      20/25      5.82G     0.9479      1.268     0.8247     0.9588          0          5        640: 100% ━━━━━━━━━━━━ 301/301 3.6it/s 1:23<0.2ss───── 8/38 3.1it/s 2.5s<9.6ss
+                 Class     Images  Instances      Box(P          R      mAP50  mAP50-95)     Mask(P          R      mAP50  mAP50-95): 100% ━━━━━━━━━━━━ 38/38 3.3it/s 11.4s0.3s
+                   all       1201       2354      0.701      0.702       0.74      0.448      0.696      0.696      0.732       0.42
+
+      Epoch    GPU_mem   box_loss   seg_loss   cls_loss   dfl_loss   sem_loss  Instances       Size
+      21/25      5.84G     0.9453       1.26     0.8185     0.9562          0          9        640: 100% ━━━━━━━━━━━━ 301/301 3.6it/s 1:23<0.2ss
+                 Class     Images  Instances      Box(P          R      mAP50  mAP50-95)     Mask(P          R      mAP50  mAP50-95): 100% ━━━━━━━━━━━━ 38/38 3.4it/s 11.2s0.3s
+                   all       1201       2354      0.685      0.729      0.742      0.446      0.683      0.727      0.741      0.423
+
+      Epoch    GPU_mem   box_loss   seg_loss   cls_loss   dfl_loss   sem_loss  Instances       Size
+      22/25      5.86G     0.9506      1.264     0.8216     0.9553          0          8        640: 100% ━━━━━━━━━━━━ 301/301 3.6it/s 1:23<0.2ss
+                 Class     Images  Instances      Box(P          R      mAP50  mAP50-95)     Mask(P          R      mAP50  mAP50-95): 100% ━━━━━━━━━━━━ 38/38 3.4it/s 11.3s0.3s
+                   all       1201       2354      0.693      0.717      0.744       0.45      0.668      0.734      0.739      0.425
+
+      Epoch    GPU_mem   box_loss   seg_loss   cls_loss   dfl_loss   sem_loss  Instances       Size
+      23/25      5.88G     0.9435      1.264     0.8112     0.9548          0          5        640: 100% ━━━━━━━━━━━━ 301/301 3.6it/s 1:23<0.2ss
+                 Class     Images  Instances      Box(P          R      mAP50  mAP50-95)     Mask(P          R      mAP50  mAP50-95): 100% ━━━━━━━━━━━━ 38/38 3.4it/s 11.3s0.3s
+                   all       1201       2354      0.673      0.736      0.747       0.45       0.66      0.748      0.741      0.425
+
+      Epoch    GPU_mem   box_loss   seg_loss   cls_loss   dfl_loss   sem_loss  Instances       Size
+      24/25      5.88G     0.9408      1.258     0.8113     0.9506          0          5        640: 100% ━━━━━━━━━━━━ 301/301 3.6it/s 1:23<0.2ss
+                 Class     Images  Instances      Box(P          R      mAP50  mAP50-95)     Mask(P          R      mAP50  mAP50-95): 100% ━━━━━━━━━━━━ 38/38 3.3it/s 11.4s0.3s
+                   all       1201       2354      0.698      0.713      0.746      0.452      0.694      0.709      0.741      0.426
+
+      Epoch    GPU_mem   box_loss   seg_loss   cls_loss   dfl_loss   sem_loss  Instances       Size
+      25/25       5.9G     0.9382      1.247      0.804     0.9559          0         15        640: 100% ━━━━━━━━━━━━ 301/301 3.7it/s 1:22<0.2ss
+                 Class     Images  Instances      Box(P          R      mAP50  mAP50-95)     Mask(P          R      mAP50  mAP50-95): 100% ━━━━━━━━━━━━ 38/38 3.4it/s 11.2s0.3s
+                   all       1201       2354      0.707      0.698      0.748      0.452      0.703        0.7      0.744      0.428
+
+25 epochs completed in 0.670 hours.
+Optimizer stripped from /kaggle/working/bacteria_yolov11n_seg/weights/last.pt, 6.0MB
+Optimizer stripped from /kaggle/working/bacteria_yolov11n_seg/weights/best.pt, 6.0MB
+
+Validating /kaggle/working/bacteria_yolov11n_seg/weights/best.pt...
+Ultralytics 8.4.12 🚀 Python-3.12.12 torch-2.8.0+cu126 CUDA:0 (Tesla P100-PCIE-16GB, 16269MiB)
+YOLO11n-seg summary (fused): 114 layers, 2,835,348 parameters, 0 gradients, 9.6 GFLOPs
+                 Class     Images  Instances      Box(P          R      mAP50  mAP50-95)     Mask(P          R      mAP50  mAP50-95): 100% ━━━━━━━━━━━━ 38/38 3.1it/s 12.1s0.3s
+                   all       1201       2354      0.706      0.703      0.749      0.451      0.701      0.701      0.743      0.427
+               G-cocci        314        446      0.716       0.72      0.758      0.465      0.697      0.709      0.741      0.428
+               G+cocci         72         97      0.504      0.773      0.643      0.376       0.51      0.784      0.647      0.372
+             G-bacilli        867       1562      0.835      0.868      0.928      0.568      0.828      0.862      0.919      0.533
+             G+bacilli        199        249      0.768       0.45      0.664      0.395      0.767       0.45      0.667      0.376

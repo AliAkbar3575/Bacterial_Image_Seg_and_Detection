@@ -1,0 +1,239 @@
+================================================================================
+OBJECT DETECTION METRICS
+================================================================================
+
+G-cocci:
+  Precision: 0.6690
+  Recall:    0.6390
+  F1 Score:  0.6537
+  AP:        0.5363
+
+G+cocci:
+  Precision: 0.5235
+  Recall:    0.8041
+  F1 Score:  0.6341
+  AP:        0.5629
+
+G-bacilli:
+  Precision: 0.8404
+  Recall:    0.8329
+  F1 Score:  0.8367
+  AP:        0.7663
+
+G+bacilli:
+  Precision: 0.6368
+  Recall:    0.5703
+  F1 Score:  0.6017
+  AP:        0.4474
+
+Overall Detection:
+  Mean Precision: 0.6674
+  Mean Recall:    0.7116
+  Mean F1:        0.6815
+  mAP:            0.5782
+
+================================================================================
+CLASSIFICATION METRICS
+================================================================================
+
+G-cocci:
+  Accuracy:  0.8638
+  Precision: 0.6690
+  Recall:    0.6390
+  F1 Score:  0.6537
+
+G+cocci:
+  Accuracy:  0.9570
+  Precision: 0.5235
+  Recall:    0.8041
+  F1 Score:  0.6341
+
+G-bacilli:
+  Accuracy:  0.7868
+  Precision: 0.8404
+  Recall:    0.8329
+  F1 Score:  0.8367
+
+G+bacilli:
+  Accuracy:  0.9124
+  Precision: 0.6368
+  Recall:    0.5703
+  F1 Score:  0.6017
+
+Overall Classification:
+  Mean Accuracy:  0.8800
+  Mean Precision: 0.6674
+  Mean Recall:    0.7116
+  Mean F1:        0.6815
+
+================================================================================
+SEGMENTATION METRICS
+================================================================================
+
+G-cocci:
+  Dice:      0.6537
+  IoU:       0.7999
+  Precision: 0.6690
+  Recall:    0.6390
+  Accuracy:  0.4855
+
+G+cocci:
+  Dice:      0.6341
+  IoU:       0.7880
+  Precision: 0.5235
+  Recall:    0.8041
+  Accuracy:  0.4643
+
+G-bacilli:
+  Dice:      0.8367
+  IoU:       0.7881
+  Precision: 0.8404
+  Recall:    0.8329
+  Accuracy:  0.7192
+
+G+bacilli:
+  Dice:      0.6017
+  IoU:       0.7952
+  Precision: 0.6368
+  Recall:    0.5703
+  Accuracy:  0.4303
+
+Overall Segmentation:
+  Mean Dice:      0.6815
+  Mean IoU:       0.7928
+  Mean Precision: 0.6674
+  Mean Recall:    0.7116
+  Mean Accuracy:  0.5248
+
+
+Total instances collected: 2631
+  - True Positives/Misclassifications: 2069
+  - False Positives: 277
+  - False Negatives: 285
+
+
+================================================================================
+CLASSIFICATION REPORT (Matched Detections Only)
+================================================================================
+              precision    recall  f1-score   support
+
+     G-cocci       0.79      0.79      0.79       363
+     G+cocci       0.60      0.83      0.70        94
+   G-bacilli       0.93      0.93      0.93      1402
+   G+bacilli       0.77      0.68      0.72       210
+
+    accuracy                           0.87      2069
+   macro avg       0.77      0.80      0.78      2069
+weighted avg       0.88      0.87      0.87      2069
+
+
+================================================================================
+CLASSIFICATION REPORT (Including FP and FN)
+================================================================================
+              precision    recall  f1-score   support
+
+     G-cocci       0.67      0.64      0.65       446
+     G+cocci       0.52      0.80      0.63        97
+   G-bacilli       0.84      0.83      0.84      1562
+   G+bacilli       0.64      0.57      0.60       249
+  Background       0.00      0.00      0.00       277
+
+    accuracy                           0.69      2631
+   macro avg       0.53      0.57      0.55      2631
+weighted avg       0.69      0.69      0.69      2631
+
+
+Training Summary:
+
+Fold 4:
+Train: 4804 samples
+Val: 1201 samples
+Val indices range: [3603 - 4803]
+Training on 4804 samples, validating on 1201 samples
+Number of model parameters: 47.40M
+Epoch 1/25 [Train]: 100%|██████████| 301/301 [04:23<00:00,  1.14it/s, loss=6.7865] 
+Epoch 1/25 [Val]: 100%|██████████| 76/76 [01:04<00:00,  1.18it/s]
+Epoch 1/25 | Train Loss: 13.2210, Val Loss: 12.0586 || Dice: 0.4068, Dice Loss: 0.5932 | IoU: 0.4487, IoU Loss: 0.5513 | Prec: 0.2920, Recall: 0.3664, Accuracy: 0.2210
+  -> Saved new best model (Dice=0.4068)
+Epoch 2/25 [Train]: 100%|██████████| 301/301 [04:19<00:00,  1.16it/s, loss=6.8116] 
+Epoch 2/25 [Val]: 100%|██████████| 76/76 [01:03<00:00,  1.19it/s]
+Epoch 2/25 | Train Loss: 9.5144, Val Loss: 11.4999 || Dice: 0.4699, Dice Loss: 0.5301 | IoU: 0.4613, IoU Loss: 0.5387 | Prec: 0.3293, Recall: 0.4162, Accuracy: 0.2693
+  -> Saved new best model (Dice=0.4699)
+Epoch 3/25 [Train]: 100%|██████████| 301/301 [04:19<00:00,  1.16it/s, loss=11.2464]
+Epoch 3/25 [Val]: 100%|██████████| 76/76 [01:03<00:00,  1.19it/s]
+Epoch 3/25 | Train Loss: 8.8277, Val Loss: 11.3857 || Dice: 0.5425, Dice Loss: 0.4575 | IoU: 0.4744, IoU Loss: 0.5256 | Prec: 0.3668, Recall: 0.4296, Accuracy: 0.2939
+  -> Saved new best model (Dice=0.5425)
+Epoch 4/25 [Train]: 100%|██████████| 301/301 [04:19<00:00,  1.16it/s, loss=9.2144] 
+Epoch 4/25 [Val]: 100%|██████████| 76/76 [01:04<00:00,  1.19it/s]
+Epoch 4/25 | Train Loss: 8.0694, Val Loss: 11.0832 || Dice: 0.5154, Dice Loss: 0.4846 | IoU: 0.4703, IoU Loss: 0.5297 | Prec: 0.3586, Recall: 0.4458, Accuracy: 0.2955
+Epoch 5/25 [Train]: 100%|██████████| 301/301 [04:20<00:00,  1.15it/s, loss=5.4426] 
+Epoch 5/25 [Val]: 100%|██████████| 76/76 [01:03<00:00,  1.19it/s]
+Epoch 5/25 | Train Loss: 7.7592, Val Loss: 11.4743 || Dice: 0.5128, Dice Loss: 0.4872 | IoU: 0.4960, IoU Loss: 0.5040 | Prec: 0.3850, Recall: 0.4573, Accuracy: 0.3144
+Epoch 6/25 [Train]: 100%|██████████| 301/301 [04:20<00:00,  1.16it/s, loss=5.8020] 
+Epoch 6/25 [Val]: 100%|██████████| 76/76 [01:03<00:00,  1.19it/s]
+Epoch 6/25 | Train Loss: 7.5081, Val Loss: 11.5909 || Dice: 0.5830, Dice Loss: 0.4170 | IoU: 0.4713, IoU Loss: 0.5287 | Prec: 0.4103, Recall: 0.4451, Accuracy: 0.3327
+  -> Saved new best model (Dice=0.5830)
+Epoch 7/25 [Train]: 100%|██████████| 301/301 [04:19<00:00,  1.16it/s, loss=7.4014] 
+Epoch 7/25 [Val]: 100%|██████████| 76/76 [01:03<00:00,  1.19it/s]
+Epoch 7/25 | Train Loss: 7.3344, Val Loss: 11.4248 || Dice: 0.5664, Dice Loss: 0.4336 | IoU: 0.4911, IoU Loss: 0.5089 | Prec: 0.4123, Recall: 0.4781, Accuracy: 0.3446
+Epoch 8/25 [Train]: 100%|██████████| 301/301 [04:19<00:00,  1.16it/s, loss=9.9663] 
+Epoch 8/25 [Val]: 100%|██████████| 76/76 [01:04<00:00,  1.18it/s]
+Epoch 8/25 | Train Loss: 6.9737, Val Loss: 11.2998 || Dice: 0.5557, Dice Loss: 0.4443 | IoU: 0.4818, IoU Loss: 0.5182 | Prec: 0.3729, Recall: 0.4581, Accuracy: 0.3115
+Epoch 9/25 [Train]: 100%|██████████| 301/301 [04:19<00:00,  1.16it/s, loss=5.5247] 
+Epoch 9/25 [Val]: 100%|██████████| 76/76 [01:03<00:00,  1.19it/s]
+Epoch 9/25 | Train Loss: 6.6648, Val Loss: 11.7597 || Dice: 0.6094, Dice Loss: 0.3906 | IoU: 0.4863, IoU Loss: 0.5137 | Prec: 0.4388, Recall: 0.4613, Accuracy: 0.3535
+  -> Saved new best model (Dice=0.6094)
+Epoch 10/25 [Train]: 100%|██████████| 301/301 [04:19<00:00,  1.16it/s, loss=4.9271]
+Epoch 10/25 [Val]: 100%|██████████| 76/76 [01:03<00:00,  1.19it/s]
+Epoch 10/25 | Train Loss: 6.5630, Val Loss: 11.7169 || Dice: 0.6062, Dice Loss: 0.3938 | IoU: 0.4769, IoU Loss: 0.5231 | Prec: 0.4337, Recall: 0.4600, Accuracy: 0.3528
+Epoch 11/25 [Train]: 100%|██████████| 301/301 [04:20<00:00,  1.16it/s, loss=5.6350]
+Epoch 11/25 [Val]: 100%|██████████| 76/76 [01:03<00:00,  1.19it/s]
+Epoch 11/25 | Train Loss: 6.3154, Val Loss: 12.6104 || Dice: 0.6031, Dice Loss: 0.3969 | IoU: 0.4696, IoU Loss: 0.5304 | Prec: 0.4326, Recall: 0.4515, Accuracy: 0.3518
+Epoch 12/25 [Train]: 100%|██████████| 301/301 [04:19<00:00,  1.16it/s, loss=10.0045]
+Epoch 12/25 [Val]: 100%|██████████| 76/76 [01:03<00:00,  1.20it/s]
+Epoch 12/25 | Train Loss: 6.1189, Val Loss: 12.0951 || Dice: 0.6069, Dice Loss: 0.3931 | IoU: 0.4750, IoU Loss: 0.5250 | Prec: 0.4205, Recall: 0.4560, Accuracy: 0.3428
+Epoch 13/25 [Train]: 100%|██████████| 301/301 [04:19<00:00,  1.16it/s, loss=5.0639]
+Epoch 13/25 [Val]: 100%|██████████| 76/76 [01:03<00:00,  1.20it/s]
+Epoch 13/25 | Train Loss: 5.9006, Val Loss: 12.2359 || Dice: 0.6187, Dice Loss: 0.3813 | IoU: 0.4805, IoU Loss: 0.5195 | Prec: 0.4314, Recall: 0.4677, Accuracy: 0.3555
+  -> Saved new best model (Dice=0.6187)
+Epoch 14/25 [Train]: 100%|██████████| 301/301 [04:18<00:00,  1.16it/s, loss=6.4803]
+Epoch 14/25 [Val]: 100%|██████████| 76/76 [01:03<00:00,  1.20it/s]
+Epoch 14/25 | Train Loss: 5.7856, Val Loss: 13.0206 || Dice: 0.6126, Dice Loss: 0.3874 | IoU: 0.4733, IoU Loss: 0.5267 | Prec: 0.4432, Recall: 0.4563, Accuracy: 0.3589
+Epoch 15/25 [Train]: 100%|██████████| 301/301 [04:19<00:00,  1.16it/s, loss=4.3691]
+Epoch 15/25 [Val]: 100%|██████████| 76/76 [01:03<00:00,  1.19it/s]
+Epoch 15/25 | Train Loss: 5.6171, Val Loss: 12.1705 || Dice: 0.6495, Dice Loss: 0.3505 | IoU: 0.4867, IoU Loss: 0.5133 | Prec: 0.4554, Recall: 0.4824, Accuracy: 0.3783
+  -> Saved new best model (Dice=0.6495)
+Epoch 16/25 [Train]: 100%|██████████| 301/301 [04:19<00:00,  1.16it/s, loss=6.4697]
+Epoch 16/25 [Val]: 100%|██████████| 76/76 [01:03<00:00,  1.20it/s]
+Epoch 16/25 | Train Loss: 5.4370, Val Loss: 12.8626 || Dice: 0.6602, Dice Loss: 0.3398 | IoU: 0.4751, IoU Loss: 0.5249 | Prec: 0.4500, Recall: 0.4565, Accuracy: 0.3622
+  -> Saved new best model (Dice=0.6602)
+Epoch 17/25 [Train]: 100%|██████████| 301/301 [04:18<00:00,  1.16it/s, loss=4.8528]
+Epoch 17/25 [Val]: 100%|██████████| 76/76 [01:03<00:00,  1.19it/s]
+Epoch 17/25 | Train Loss: 5.3083, Val Loss: 13.8308 || Dice: 0.6699, Dice Loss: 0.3301 | IoU: 0.4762, IoU Loss: 0.5238 | Prec: 0.4602, Recall: 0.4549, Accuracy: 0.3690
+  -> Saved new best model (Dice=0.6699)
+Epoch 18/25 [Train]: 100%|██████████| 301/301 [04:19<00:00,  1.16it/s, loss=4.8486]
+Epoch 18/25 [Val]: 100%|██████████| 76/76 [01:03<00:00,  1.20it/s]
+Epoch 18/25 | Train Loss: 5.2156, Val Loss: 13.4658 || Dice: 0.6615, Dice Loss: 0.3385 | IoU: 0.4819, IoU Loss: 0.5181 | Prec: 0.4642, Recall: 0.4711, Accuracy: 0.3797
+Epoch 19/25 [Train]: 100%|██████████| 301/301 [04:18<00:00,  1.16it/s, loss=3.5038]
+Epoch 19/25 [Val]: 100%|██████████| 76/76 [01:03<00:00,  1.20it/s]
+Epoch 19/25 | Train Loss: 5.1135, Val Loss: 14.2790 || Dice: 0.6763, Dice Loss: 0.3237 | IoU: 0.4776, IoU Loss: 0.5224 | Prec: 0.4652, Recall: 0.4586, Accuracy: 0.3745
+  -> Saved new best model (Dice=0.6763)
+Epoch 20/25 [Train]: 100%|██████████| 301/301 [04:20<00:00,  1.16it/s, loss=3.4938]
+Epoch 20/25 [Val]: 100%|██████████| 76/76 [01:03<00:00,  1.19it/s]
+Epoch 20/25 | Train Loss: 5.0246, Val Loss: 14.4137 || Dice: 0.6551, Dice Loss: 0.3449 | IoU: 0.4731, IoU Loss: 0.5269 | Prec: 0.4612, Recall: 0.4518, Accuracy: 0.3659
+Epoch 21/25 [Train]: 100%|██████████| 301/301 [04:19<00:00,  1.16it/s, loss=5.0223]
+Epoch 21/25 [Val]: 100%|██████████| 76/76 [01:03<00:00,  1.20it/s]
+Epoch 21/25 | Train Loss: 4.9690, Val Loss: 14.2911 || Dice: 0.6788, Dice Loss: 0.3212 | IoU: 0.4779, IoU Loss: 0.5221 | Prec: 0.4592, Recall: 0.4629, Accuracy: 0.3724
+  -> Saved new best model (Dice=0.6788)
+Epoch 22/25 [Train]: 100%|██████████| 301/301 [04:20<00:00,  1.15it/s, loss=4.1463]
+Epoch 22/25 [Val]: 100%|██████████| 76/76 [01:03<00:00,  1.20it/s]
+Epoch 22/25 | Train Loss: 4.9171, Val Loss: 14.6285 || Dice: 0.6697, Dice Loss: 0.3303 | IoU: 0.4706, IoU Loss: 0.5294 | Prec: 0.4590, Recall: 0.4517, Accuracy: 0.3671
+Epoch 23/25 [Train]: 100%|██████████| 301/301 [04:19<00:00,  1.16it/s, loss=4.1017]
+Epoch 23/25 [Val]: 100%|██████████| 76/76 [01:03<00:00,  1.20it/s]
+Epoch 23/25 | Train Loss: 4.8577, Val Loss: 14.6876 || Dice: 0.6741, Dice Loss: 0.3259 | IoU: 0.4775, IoU Loss: 0.5225 | Prec: 0.4710, Recall: 0.4622, Accuracy: 0.3790
+Epoch 24/25 [Train]: 100%|██████████| 301/301 [04:19<00:00,  1.16it/s, loss=6.1429]
+Epoch 24/25 [Val]: 100%|██████████| 76/76 [01:03<00:00,  1.19it/s]
+Epoch 24/25 | Train Loss: 4.8568, Val Loss: 14.6715 || Dice: 0.6702, Dice Loss: 0.3298 | IoU: 0.4757, IoU Loss: 0.5243 | Prec: 0.4684, Recall: 0.4555, Accuracy: 0.3761
+Epoch 25/25 [Train]: 100%|██████████| 301/301 [04:19<00:00,  1.16it/s, loss=5.5553]
+Epoch 25/25 [Val]: 100%|██████████| 76/76 [01:03<00:00,  1.20it/s]
+Epoch 25/25 | Train Loss: 4.8164, Val Loss: 14.7184 || Dice: 0.6723, Dice Loss: 0.3277 | IoU: 0.4756, IoU Loss: 0.5244 | Prec: 0.4679, Recall: 0.4552, Accuracy: 0.3742
